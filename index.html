@@ -137,6 +137,26 @@
     }
   </style>
 </head>
+  <script>
+function shareUPI() {
+  const upiId = "9966074514-4@axl";
+  const text =
+    "UPI ID for Go-Seva:\n" +
+    upiId + "\n\n" +
+    "Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala";
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Go-Seva Payment",
+      text: text
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(upiId);
+    alert("UPI ID copied. Open your UPI app and paste it to pay.");
+  }
+}
+</script>
+
 <body>
 
 <header>
