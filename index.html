@@ -137,25 +137,18 @@
     }
   </style>
 </head>
-  <script>
-function shareUPI() {
+<script>
+function copyUPI() {
   const upiId = "9966074514-4@axl";
-  const text =
-    "UPI ID for Go-Seva:\n" +
-    upiId + "\n\n" +
-    "Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala";
-
-  if (navigator.share) {
-    navigator.share({
-      title: "Go-Seva Payment",
-      text: text
-    }).catch(() => {});
-  } else {
-    navigator.clipboard.writeText(upiId);
-    alert("UPI ID copied. Open your UPI app and paste it to pay.");
-  }
+  navigator.clipboard.writeText(upiId).then(() => {
+    alert(
+      "UPI ID copied.\n\n" +
+      "Open Google Pay / PhonePe / Paytm and paste the UPI ID to complete payment."
+    );
+  });
 }
 </script>
+
 
 <body>
 
@@ -214,9 +207,9 @@ function shareUPI() {
   <p class="sub">A voluntary contribution</p>
   <p>Those who wish may offer financial support towards fodder, shelter, and essential care. This contribution is entirely voluntary and carries no obligation.</p>
   <!-- Primary action: Share UPI ID -->
-  <button class="upi-share-btn" onclick="shareUPI()">
-    Share UPI ID | UPI ఐడి షేర్ చేయండి
-  </button>
+  <button class="upi-share-btn" onclick="copyUPI()">
+  Copy UPI ID | UPI ఐడి కాపీ చేయండి
+</button>
 
   <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;">
     This works smoothly on the same phone using Google Pay, PhonePe, Paytm,
