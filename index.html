@@ -295,6 +295,41 @@
     line-height: 1.6;
   }
 }
+.title {
+  line-height: 1.25;
+  text-align: left;
+}
+
+.title-main {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #3b2f2a;
+
+  /* subtle elevation */
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.6),
+    0 3px 6px rgba(0,0,0,0.12);
+}
+@media (max-width: 600px) {
+  .title-main {
+    font-size: 1.1rem;
+    letter-spacing: 0.015em;
+  }
+}
+.title-main::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #c9b28f;
+  margin-top: 0.4rem;
+}
+@media (max-width: 600px) {
+  .title-main::after {
+    width: 36px;
+  }
+}
 
 
 
@@ -326,9 +361,11 @@ function closeQRModal() {
   <div class="brand">
     <img src="images/logo.png" alt="Goshala Logo" class="logo">
     <div class="title">
-      Jagadguru Sri Sri Vidhusekhara  
-      Bharati Mahaswamy Goshala
-    </div>
+  <span class="title-main">
+    Jagadguru Sri Sri Vidhusekhara<br>
+    Bharati Mahaswamy Goshala
+  </span>
+</div>
   </div>
 
   <p class="blessing">
