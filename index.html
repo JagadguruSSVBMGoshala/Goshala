@@ -209,7 +209,27 @@ function copyUPI() {
   <h2>Offer Go-Seva</h2>
   <p class="sub">A voluntary contribution</p>
   <p>Those who wish may offer financial support towards fodder, shelter, and essential care. This contribution is entirely voluntary and carries no obligation.</p>
-  <!-- Primary action: Share UPI ID -->
+  <!-- QR CODE (PRIMARY) -->
+  <div style="margin:2rem 0;">
+    <p style="font-weight:600; margin-bottom:1rem;">
+      Scan to Offer Go-Seva
+    </p>
+
+    <img
+      src="images/upi-qr.jpeg"
+      alt="UPI QR Code for Go-Seva"
+      style="
+        max-width:260px;
+        width:100%;
+        border-radius:12px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.12);
+      "
+    />
+
+    <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;">
+      Scan using any UPI app (Google Pay, PhonePe, Paytm).
+    </p>
+  </div>
   <a
   href="upi://pay?pa=9966074514-4@axl&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala&cu=INR"
   onclick="copyUPI()"
