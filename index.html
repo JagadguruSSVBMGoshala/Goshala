@@ -193,12 +193,27 @@
   <h2>Offer Go-Seva</h2>
   <p class="sub">A voluntary contribution</p>
   <p>Those who wish may offer financial support towards fodder, shelter, and essential care. This contribution is entirely voluntary and carries no obligation.</p>
- <a href="upi://pay?pa=9966074514-4@axl
-&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala
-&cu=INR">
-  Offer Go-Seva
-</a>
-  <small>UPI links open on mobile devices.</small>
+  <!-- Primary action: Share UPI ID -->
+  <button class="upi-share-btn" onclick="shareUPI()">
+    Share UPI ID | UPI ఐడి షేర్ చేయండి
+  </button>
+
+  <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;">
+    This works smoothly on the same phone using Google Pay, PhonePe, Paytm,
+    or any UPI app.
+  </p>
+
+  <!-- Optional deep link (secondary) -->
+  <a
+    href="upi://pay?pa=9966074514-4@axl&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala&cu=INR"
+    style="display:inline-block; margin-top:1.2rem; font-size:0.9rem;"
+  >
+    Try UPI App Link (Mobile)
+  </a>
+
+  <small style="display:block; margin-top:0.5rem;">
+    Some UPI apps may request QR scanning or manual entry.
+  </small>
 
   <div class="bank">
     <strong>Alternative: Bank Transfer</strong><br><br>
