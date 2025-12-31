@@ -137,6 +137,45 @@
     .lang h3 {
       text-align: center;
       margin-bottom: 1rem;
+
+    .qr-thumb {
+  max-width: 260px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+/* Modal overlay */
+.qr-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content */
+.qr-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+  background: #fff;
+  padding: 12px;
+}
+
+/* Close button */
+.qr-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
     }
   </style>
 </head>
@@ -149,6 +188,13 @@ function copyUPI() {
       "Open Google Pay / PhonePe / Paytm and paste the UPI ID to complete payment."
     );
   });
+}
+function openQRModal() {
+  document.getElementById("qrModal").style.display = "flex";
+}
+
+function closeQRModal() {
+  document.getElementById("qrModal").style.display = "none";
 }
 </script>
 
@@ -216,15 +262,12 @@ function copyUPI() {
     </p>
 
     <img
-      src="images/upi-qr.jpeg"
-      alt="UPI QR Code for Go-Seva"
-      style="
-        max-width:260px;
-        width:100%;
-        border-radius:12px;
-        box-shadow:0 4px 12px rgba(0,0,0,0.12);
-      "
-    />
+  src="images/upi-qr.png"
+  alt="UPI QR Code for Go-Seva"
+  class="qr-thumb"
+  onclick="openQRModal()"
+/>
+
 
     <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;">
       Scan using any UPI app (Google Pay, PhonePe, Paytm).
@@ -280,6 +323,9 @@ function copyUPI() {
 <footer>
   <p>Maintained as voluntary seva. Visitors and volunteers are always welcome.</p>
 </footer>
-
+<div class="qr-modal" id="qrModal" onclick="closeQRModal()">
+  <span class="qr-close">&times;</span>
+  <img src="images/upi-qr.png" alt="UPI QR Code Enlarged">
+</div>
 </body>
 </html>
