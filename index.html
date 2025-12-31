@@ -279,6 +279,22 @@
     font-size: 0.95rem;
   }
 }
+/* By default (mobile): no line breaks */
+.blessing .br {
+  display: none;
+}
+
+/* On laptop and larger screens: enable breaks */
+@media (min-width: 768px) {
+  .blessing .br {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .blessing {
+    line-height: 1.6;
+  }
+}
 
 
 
@@ -316,10 +332,10 @@ function closeQRModal() {
   </div>
 
   <p class="blessing">
-    With the Divine Blessings of His Holiness<br>
-    Dakshinamnaaya Sringeri Sri Sharada Peethadhishvara<br>
-    Jagadguru Shankaracharya Sri Sri Bharati Tirtha Mahaswami<br>
-    and<br>
+    With the Divine Blessings of His Holiness<span class="br"></span>
+    Dakshinamnaaya Sringeri Sri Sharada Peethadhishvara<span class="br"></span>
+    Jagadguru Shankaracharya Sri Sri Bharati Tirtha Mahaswami<span class="br"></span>
+    and<span class="br"></span>
     Jagadguru Shankaracharya Sri Sri Vidhushekhara Bharati Mahaswami
   </p>
 </header>
