@@ -209,6 +209,29 @@
     min-height: 420px;
   }
 }
+    /* Mobile-only persistent center logo */
+.mobile-logo-overlay {
+  display: none; /* hidden by default */
+}
+
+@media (max-width: 600px) {
+  .mobile-logo-overlay {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* VERY important */
+  }
+
+  .mobile-logo-overlay img {
+    width: 160px;
+    height: 160px;
+    opacity: 0.08; /* semi-transparent, sacred not loud */
+  }
+}
+
 
 
   </style>
@@ -239,9 +262,9 @@ function closeQRModal() {
   <h1>Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala</h1>
   <p>With the Divine Blessings of His Holiness  
 Dakshinamnaaya Sringeri Sri Sharada Peethadhishvara  
-Jagadguru Shankaracharya Sri Sri Bharati Tirtha Mahaswami  
+Jagadguru Shankaracharya Sri Sri Bharati Tirtha Mahaswamy
 and  
-Jagadguru Shankaracharya Sri Sri Vidhushekhara Bharati Mahaswami
+Jagadguru Shankaracharya Sri Sri Vidhusekhara Bharati Mahaswamy
 
 </p>
   </header>
@@ -285,7 +308,7 @@ Jagadguru Shankaracharya Sri Sri Vidhushekhara Bharati Mahaswami
 
 <section>
   <h2>Inspiration & Lineage</h2>
-  <p>This Gośālā draws inspiration from the dharmic values upheld by the Sringeri tradition and is named in reverence to Jagadguru Sri Sri Vidhushekhara Bharati Mahaswamy. The work undertaken here is not institutional or commercial in nature; it is carried out as personal and collective seva.</p>
+  <p>This Gośālā draws inspiration from the dharmic values upheld by the Sringeri tradition and is named in reverence to Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy. The work undertaken here is not institutional or commercial in nature; it is carried out as personal and collective seva.</p>
   <p>The emphasis is on restraint, responsibility, and reverence, allowing nature to function with support instead of excessive human interference.</p>
 
   <div class="lang">
@@ -383,5 +406,9 @@ Jagadguru Shankaracharya Sri Sri Vidhushekhara Bharati Mahaswami
   <span class="qr-close">&times;</span>
   <img src="images/upi-qr.jpeg" alt="UPI QR Code Enlarged">
 </div>
+  <div class="mobile-logo-overlay">
+  <img src="images/logo.png" alt="Goshala Logo">
+</div>
+
 </body>
 </html>
