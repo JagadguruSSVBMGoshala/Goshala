@@ -333,6 +333,33 @@
     width: 36px;
   }
 }
+/* Language toggle button */
+.lang-toggle {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 10000;
+  background: #7b5e3b;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+/* Language visibility control */
+[data-lang] {
+  display: none;
+}
+
+body.lang-en [data-lang="en"] {
+  display: block;
+}
+
+body.lang-te [data-lang="te"] {
+  display: block;
+}
 
 
 
@@ -355,6 +382,20 @@ function openQRModal() {
 function closeQRModal() {
   document.getElementById("qrModal").style.display = "none";
 }
+  function toggleLanguage() {
+    if (document.body.classList.contains("lang-en")) {
+      document.body.classList.remove("lang-en");
+      document.body.classList.add("lang-te");
+    } else {
+      document.body.classList.remove("lang-te");
+      document.body.classList.add("lang-en");
+    }
+  }
+
+  // Default language
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("lang-en");
+  });
 </script>
 
 
@@ -365,27 +406,39 @@ function closeQRModal() {
     <img src="images/logo.png" alt="Goshala Logo" class="logo">
     <div class="title">
   <span class="title-main">
-    Jagadguru Sri Sri Vidhusekhara<br>
-    Bharati Mahaswamy Goshala
+    <p data-lang="en">
+    Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala</p>
+    <p data-lang="te">జగద్గురు శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వామి గోశాల</p>
   </span>
 </div>
   </div>
 
-  <p class="blessing">
+  <p class="blessing" data-lang="en">
     With the Divine Blessings of His Holiness<span class="br"></span>
     Dakshinamnaaya Sringeri Sri Sharada Peethadhishvara<span class="br"></span>
     Jagadguru Shankaracharya Sri Sri Bharati Tirtha Mahaswamy and<span class="br"></span>
     Jagadguru Shankaracharya Sri Sri Vidhushekhara Bharati Mahaswamy
   </p>
+  <p class="blessing" data-lang="te">
+  దక్షిణామ్నాయ శృంగేరి శారదాపీఠాధీశ్వరులు జగద్గురు శంకరాచార్య
+  శ్రీ శ్రీ భారతీ తీర్థ మహాస్వామి మరియు జగద్గురు శంకరాచార్య
+  శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వాముల దివ్య ఆశీస్సులతో
+</p>
 </header>
+  <button class="lang-toggle" onclick="toggleLanguage()">
+  English / తెలుగు
+</button>
+
 
 <section class="invocation">
   <p>दानानामपि सर्वेषां | गवां दानं प्रशस्यते । <br>
 गावः श्रेष्ठाः पवित्राश्च | पावनं ह्येतदुत्तमम् ॥</p>
-  <p>Among all forms of charity, the giving (and protection) of cows is held as the most praiseworthy. Cows are supreme and sacred, and this act is regarded as the highest purifier.</p>
-
+  <p data-lang="en">Among all forms of charity, the giving (and protection) of cows is held as the most praiseworthy. Cows are supreme and sacred, and this act is regarded as the highest purifier.</p>
+<p data-lang="te">సర్వదానములలో గోదానం (గోవుల సంరక్షణతో కూడినది) అత్యంత శ్రేష్ఠమైనదిగా భావించబడుతుంది. గోవులు శ్రేష్ఠములు, పవిత్రములు; ఈ కార్యం అత్యుత్తమమైన పావనకర్మగా పరిగణించబడుతుంది.
+</p>
 </section>
 <section>
+  <div data-lang="en">
   <h2>About the Gośālā</h2>
   <p>
     With the complete blessings of His Holiness,
@@ -415,16 +468,9 @@ function closeQRModal() {
     With reverence for nature and trust in tradition,
     the care of cows is carried out here in a spirit of service.
   </p>
-  <div class="gallery">
-    <img src="images/cow1.png" alt="Cows resting in the goshala">
-    <img src="images/cow2.png" alt="Natural feeding of cows">
-    <img src="images/cow3.png" alt="Open and calm goshala environment">
   </div>
- <p> त्वं माता सर्व देवानां त्वं च यज्ञस्य कारणम् |<br>
- त्वं तीर्थ सर्वतीर्थानां नमस्तेस्तु सदानधे ||</p>
-
-  <div class="lang">
-    <h3>గోశాల </h3>
+   <div class="lang" data-lang="te">
+    <h3>గోశాల గురించి</h3>
     <p>శ్రీమత్పరమహంస పరివ్రాజకాచార్యవర్యాది సమస్త బిరుదావాళి విరాజమానులు దక్షిణామ్నాయ శృంగేరీ శారదాపీఠాధీశ్వరులు జగద్గురు శంకరాచార్య ఆనంతశ్రీవిభూషిత శ్రీ శ్రీ భారతీతీర్థ మహాసన్నిధానం వారు తత్కరకమల సంజాతులు శ్రీ శ్రీ విధుశేఖర భారతీ సన్నిధానం వార్ల, సంపూర్ణ ఆశీస్సులతో
 శ్రీ క్రోధి నామ సంవత్సర, ఉత్తరాయణ, పుష్య బహుళ షష్ఠీ, ఉత్తరా నక్షత్రం, భానువారం నాడు అనగా 19-01-2025 
 శ్రీమజ్జగద్గురు శ్రీ శ్రీ విధుశేఖర భారతీ స్వామి వారి సువర్ణహస్తములతో "జగద్గురు శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వామి గోశాల" శంకుస్థాపన కార్యక్రమం జరపబడింది .</p>
@@ -434,9 +480,19 @@ function closeQRModal() {
 సేవాభావంతో గోవుల సంరక్షణ ఇక్కడ సాగుతుంది.</p>
 
   </div>
+  <div class="gallery">
+    <img src="images/cow1.png" alt="Cows resting in the goshala">
+    <img src="images/cow2.png" alt="Natural feeding of cows">
+    <img src="images/cow3.png" alt="Open and calm goshala environment">
+  </div>
+ <p> त्वं माता सर्व देवानां त्वं च यज्ञस्य कारणम् |<br>
+ त्वं तीर्थ सर्वतीर्थानां नमस्तेस्तु सदानधे ||</p>
+
+ 
 </section>
 
 <section>
+   <div data-lang="en">
   <h2>Inspiration & Lineage</h2>
   <p>This Gośālā draws inspiration from the dharmic ideals of the Sringeri tradition.
     Its core purpose is to care for cows with a spirit of seva—allowing them to live
@@ -455,7 +511,8 @@ function closeQRModal() {
     personal and collective act of responsibility, restraint, and reverence—supporting
     nature rather than interfering with it.
   </p>
-  <div class="lang">
+   </div>
+  <div class="lang" data-lang="en"> 
     <h3>ప్రేరణ</h3>
     <p>ఈ గోశాల శృంగేరి సంప్రదాయంలోని ధార్మిక ఆదర్శాల నుండి ప్రేరణ పొందింది. గోవులను సహజంగా, హింస లేకుండా, బలవంతం చేయకుండా
 సేవాభావంతో సంరక్షించడమే ఈ ప్రయత్నం యొక్క మూల ఉద్దేశ్యం.
@@ -470,14 +527,29 @@ function closeQRModal() {
 </section>
 
 <section class="donate">
+  <div data-lang="en">
   <h2>Offer Go-Seva</h2>
   <p class="sub">A voluntary contribution</p>
   <p>Those who wish may offer financial support towards fodder, shelter, and essential care. This contribution is entirely voluntary and carries no obligation.</p>
+  </div>
+  <div class="lang" data-lang="te">
+  <h2>గోసేవ అర్పణ</h2>
+<p class="sub">స్వచ్ఛంద విరాళం</p>
+<p>
+ఆహారం, నివాసం మరియు అవసరమైన సంరక్షణ కోసం
+ఆర్థిక సహాయం అందించదలచిన వారు స్వచ్ఛందంగా విరాళం అర్పించవచ్చు.
+ఇది పూర్తిగా ఐచ్ఛికమే, ఎటువంటి బలవంతం లేదు.
+</p>
+  </div>
+
   <!-- QR CODE (PRIMARY) -->
   <div style="margin:2rem 0;">
-    <p style="font-weight:600; margin-bottom:1rem;">
+    <p style="font-weight:600; margin-bottom:1rem;" data-lang="en">
       Scan to Offer Go-Seva
     </p>
+    <p style="font-weight:600; margin-bottom:1rem;" class="lang" data-lang="te">
+  గోసేవ అర్పించేందుకు స్కాన్ చేయండి
+</p>
 
     <img
   src="images/upi-qr.jpeg"
@@ -485,36 +557,62 @@ function closeQRModal() {
   class="qr-thumb"
   onclick="openQRModal()"
 />
-    <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;">
+    <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;" data-lang="en">
       Scan using any UPI app (Google Pay, PhonePe, Paytm).
     </p>
+    <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.85;" class="lang" data-lang="te">
+  ఏదైనా UPI యాప్ ద్వారా స్కాన్ చేసి గోసేవ అర్పించవచ్చు.
+</p>
+    
   </div>
-  <a
-  href="upi://pay?pa=9966074514-4@axl&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala&cu=INR"
-  onclick="copyUPI()"
->
+ <div data-lang="en">
+  <a href="upi://pay?pa=9966074514-4@axl&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala&cu=INR"
+  onclick="copyUPI()">
   Offer Go-Seva
 </a>
-
+ </div>
+  <div class="lang" data-lang="te">
+  <a href="upi://pay?pa=9966074514-4@axl&pn=Jagadguru%20Sri%20Sri%20Vidhusekhara%20Bharati%20Mahaswamy%20Goshala&cu=INR"
+  onclick="copyUPI()">
+  గోసేవ సమర్పించండి
+</a>
+ </div>
+<div data-lang="en">
   <small>
     Opens your UPI app on mobile devices.
   </small>
+</div>
+   <div class="lang" data-lang="te">
+  <small>
+  మొబైల్ పరికరాల్లో మీ UPI యాప్ తెరవబడుతుంది.
+</small>
+   </div>
 
   <div class="bank">
+    <div data-lang="en">
     <strong>Alternative: Bank Transfer</strong><br><br>
     Account Name: Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala<br>
     Bank Name: Andhra Pradesh Grameena Bank<br>
     Account Number: 566310056134736<br>
     IFSC Code: UBIN0CG7999
+    </div>
+    <div class="lang" data-lang="te">
+      <strong>ప్రత్యామ్నాయం: బ్యాంక్ బదిలీ</strong><br><br>
+  ఖాతా పేరు: జగద్గురు శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వామి గోశాల<br>
+  బ్యాంక్ పేరు: ఆంధ్రప్రదేశ్ గ్రామీణ బ్యాంక్<br>
+  ఖాతా సంఖ్య: 566310056134736<br>
+  IFSC కోడ్: UBIN0CG7999
+    </div>
   </div>
 </section>
 
 <section>
+  <div data-lang="en">
   <h2>Visit & Volunteer</h2>
   <p>The Gośālā is open to visitors from sunrise to sunset. Those who wish to understand Go-seva, spend time with the cows, or contribute their physical effort are welcome.</p>
   <p>Volunteers may assist with feeding, cleaning, maintenance, or simply being present. No prior experience is required, only respect and sincerity.</p>
-
-  <div class="lang">
+</div>
+  <div class="lang" data-lang="te">
     <h3>గోసేవ సందర్శన</h3>
     <p>సూర్యోదయం నుండి సూర్యాస్తమయం వరకు గోశాల సందర్శనకు అందుబాటులో ఉంటుంది. గోసేవ చేయాలనుకునే వారు, గోవులతో సమయం గడపాలనుకునే వారు స్వాగతం.</p>
     <p>ఆహారం పెట్టడం, శుభ్రపరిచే పనులు, సాధారణ సేవలలో స్వచ్ఛందంగా పాల్గొనవచ్చు.</p>
@@ -522,12 +620,13 @@ function closeQRModal() {
 </section>
 
 <section>
+  <div data-lang="en">
   <h2>Varṣikotsavam (Annual Observance)</h2>
   <p class="sub">A day of collective prayer and gratitude</p>
   <p>The Gośālā observes its Varṣikotsavam every year on Pushya bahula sashti (9 January 2025). On this day, dharmic rituals, including Ganapati Pūja, Gau Pūja, Punyāhavācanam, abhishekam, various homas, and the Śrī Lakṣmī Veṅkaṭeśvara Svāmī Kalyāṇotsavam, are performed, followed by prasāda distribution and a grāmotsavam.</p>
   <p>All devotees, well-wishers, and visitors are welcome to attend.</p>
-
-  <div class="lang">
+</div>
+  <div class="lang" data-lang="te">
     <h3>వార్షికోత్సవం</h3>
     <p>ప్రతి సంవత్సరం పుష్య బహుళ షష్టిన గోశాలలో వార్షికోత్సవం నిర్వహించబడుతుంది(జనవరి 9 2025). గణపతి పూజ, గోపూజ, పుణ్యాహవాచనం, ఋత్వీకరణ మహాన్యాస పూర్వక ఏకాదశ రుద్రాభిషేకం, సహస్ర మొదుక హోమం, నవగ్రహ హోమం, రుద్ర హోమం , శ్రీదేవి భూదేవి సమేత శ్రీ లక్ష్మి వెంకటేశ్వర స్వామి కళ్యాణోత్సవం మరియు ప్రసాద వితరణ జరుగుతాయి.</p>
     <p>అందరూ భక్తులు, శ్రేయోభిలాషులు ఆహ్వానితులే.</p>
@@ -535,25 +634,53 @@ function closeQRModal() {
 </section>
 
 <section>
+  <div data-lang="en">
   <h2>Seva Acknowledgement (Optional)</h2>
   <p class="sub">For those who wish to share their details</p>
   <p>Those who wish to receive an acknowledgement for their seva may share their name, gotra, or contact details below. This is entirely optional.</p>
+  </div>
+  <div class="lang" data-lang="te">
+  <h2>సేవా స్వీకరణ సమాచారం (ఐచ్ఛికం)</h2>
+<p class="sub">తమ వివరాలను పంచుకోవాలనుకునే వారికి</p>
+<p>
+సేవకు సంబంధించిన స్వీకరణ సమాచారం పొందాలనుకునే వారు
+తమ పేరు, గోత్రం లేదా సంప్రదింపు వివరాలను క్రింద పంచుకోవచ్చు.
+ఇది పూర్తిగా ఐచ్ఛికమే.
+</p>
+  </div>
   <iframe src="https://forms.gle/8G2Zao7FKHdvZA8f7"></iframe>
 </section>
 
 <section>
+  <div data-lang="en">
   <h2>Contact & Location</h2>
   <p>Y.Tejesh Sharma - 9014649095 </p>
   <p>Y.Nikhil Sharma - 7013421116</p>
   <p>Yagnisettipalle – 515341</p>
   <p><a href="https://maps.app.goo.gl/AeoQ1R4nZvY9H6zT8" target="_blank">View on Google Maps</a></p>
+  </div>
+  <div class="lang" data-lang="te">
+    <h2>సంప్రదింపు & స్థానం</h2>
+    <p>వై. తేజేష్ శర్మ – 9014649095</p>
+    <p>వై. నిఖిల్ శర్మ – 7013421116</p>
+    <p>యజ్ఞిశెట్టిపల్లి – 515341</p>
+    <p><a href="https://maps.app.goo.gl/AeoQ1R4nZvY9H6zT8" target="_blank">గూగుల్ మప్స్ లో వీక్షించండి</a></p>
+  </div>
 </section>
 
 <footer>
+  <div data-lang="en">
   <p>Maintained as voluntary seva. Visitors and volunteers are always welcome.</p>
   <br>
   <br>
   <p>2025 Created by Y.Shri Vidhatri </p>
+    </div>
+   <div class="lang" data-lang="te">
+  <p>ఇది స్వచ్ఛంద సేవగా నిర్వహించబడుతోంది. సందర్శకులు ఎప్పుడూ స్వాగతం.</p>
+  <br>
+  <br>
+  <p>2025 – వై. శ్రీ విధాత్రి</p>
+    </div>
 </footer>
 <div class="qr-modal" id="qrModal" onclick="closeQRModal()">
   <span class="qr-close">&times;</span>
