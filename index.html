@@ -431,6 +431,10 @@ function closeQRModal() {
     document.getElementById("donation-qr")
       .scrollIntoView({ behavior: "smooth", block: "center" });
   }
+  function donateAction() {
+    scrollToDonation();
+    openQRModal();
+  }
 </script>
 
 
@@ -715,7 +719,7 @@ function closeQRModal() {
   <p>ఇది స్వచ్ఛంద సేవగా నిర్వహించబడుతోంది. సందర్శకులు ఎప్పుడూ స్వాగతం.</p>
   <br>
   <br>
-  <p>2025 – వై. శ్రీ విధాత్రి</p>
+  <p>వెబ్సైటు 2025 – వై. శ్రీ విధాత్రి చే రూపొందించబడింది  </p>
     </div>
 </footer>
 <div class="qr-modal" id="qrModal" onclick="closeQRModal()">
@@ -725,7 +729,7 @@ function closeQRModal() {
   <div class="mobile-logo-overlay">
   <img src="images/logo.png" alt="Goshala Logo">
 </div>
-<button class="donate-float" onclick="scrollToDonation()">
+<button class="donate-float" onclick="donateAction()">
   Offer<br>Donations
 </button>
 </body>
