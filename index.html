@@ -393,24 +393,28 @@ body.lang-te [data-lang="te"] {
 .invocation::after {
   display: none;
 }
-    .header-inner {
+ .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2.5rem;
+  display: flex;
   align-items: center;
+  gap: 2rem;
   padding: 2.5rem 1.5rem;
 }
 
+
 .big-logo {
-  width: 140px;
+  width: 130px;
   height: auto;
+  flex-shrink: 0;
 }
 
+
 .header-text {
+  flex: 1;
   text-align: center;
 }
+
 
 .header-text .title {
   margin-bottom: 1rem;
@@ -420,19 +424,22 @@ body.lang-te [data-lang="te"] {
   margin: 0.6rem auto 0;
   max-width: 720px;
 }
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
   .header-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
   }
 
   .big-logo {
-    margin: 0 auto 1rem;
-    width: 90px;
+    width: 64px; /* slightly bigger than earlier, not dominant */
   }
 
   .header-text {
-    text-align: center;
+    text-align: left;
+  }
+
+  .title-main {
+    font-size: 1.05rem;
   }
 }
 
