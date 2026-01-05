@@ -424,6 +424,13 @@ body.lang-te [data-lang="te"] {
   margin: 0.6rem auto 0;
   max-width: 720px;
 }
+    .header-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 @media (max-width: 768px) {
   .header-inner {
     gap: 1rem;
@@ -440,6 +447,34 @@ body.lang-te [data-lang="te"] {
 
   .title-main {
     font-size: 1.05rem;
+  }
+}
+    @media (min-width: 769px) {
+  .blessing {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+/* Mobile: blessings drop below, logo stays only with title */
+@media (max-width: 768px) {
+  .header-top {
+    justify-content: center;
+  }
+
+  .logo {
+    width: 52px;
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .blessing {
+    margin-top: 1rem;
+    text-align: center;
   }
 }
 
