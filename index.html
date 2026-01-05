@@ -22,7 +22,7 @@
     header {
       background: radial-gradient(circle at top, #f4e6c8 0%, #e8d7b6 100%);
       padding: 3rem 1.2rem;
-      text-align: center;
+      /* text-align: center; */
       border-bottom: 4px solid #d1bfa1;
     }
 
@@ -393,6 +393,50 @@ body.lang-te [data-lang="te"] {
 .invocation::after {
   display: none;
 }
+    .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.big-logo {
+  width: 140px;
+  height: auto;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text .title {
+  margin-bottom: 1rem;
+}
+
+.blessing {
+  margin: 0.6rem auto 0;
+  max-width: 720px;
+}
+    @media (max-width: 768px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .big-logo {
+    margin: 0 auto 1rem;
+    width: 90px;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+}
+
+
 
 
 
@@ -443,17 +487,15 @@ function closeQRModal() {
 <body>
 
 <header>
-  <div class="brand">
+  <div class="header-inner">
     <img src="images/logo.png" alt="Goshala Logo" class="logo">
-    <div class="title">
+    <div class="header-text">
+      <div class="title">
   <span class="title-main">
-    <p data-lang="en">
-    Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala</p>
+    <p data-lang="en">Jagadguru Sri Sri Vidhusekhara Bharati Mahaswamy Goshala</p>
     <p data-lang="te">జగద్గురు శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వామి గోశాల</p>
   </span>
 </div>
-  </div>
-
   <p class="blessing" data-lang="en">
     With the Divine Blessings of His Holiness<span class="br"></span>
     Dakshinamnaaya Sringeri Sri Sharada Peethadhishvara<span class="br"></span>
@@ -465,6 +507,8 @@ function closeQRModal() {
   శ్రీ శ్రీ భారతీ తీర్థ మహాస్వాములు మరియు జగద్గురు శంకరాచార్య
   శ్రీ శ్రీ విధుశేఖర భారతీ మహాస్వాముల వార్ల దివ్య ఆశీస్సులతో
 </p>
+      </div>
+    </div>
 </header>
   <button class="lang-toggle" onclick="toggleLanguage()">
   English / తెలుగు
